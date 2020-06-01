@@ -63,7 +63,9 @@ This BIP is presumed deployed and activated as of a past block height by impleme
 
 ==Backward compatibility==
 
-The first block larger than 4M will create a network partition, as nodes with a fixed 4M hard limit reject that block.
+#The first block larger than 4M will create a network partition, as nodes with a fixed 4M hard limit reject that block.
+#The first block with a non segregated witness data area larger than 1M will create a network partition, as nodes with a fixed 1M hard limit reject that block.
+
 
 ==Implementations==
 https://github.com/oki-burokku/The-White-Paper/blob/master/BIP_Oki.mediawiki</br>
