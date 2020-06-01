@@ -39,8 +39,8 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ### The votes of the previous 2016 blocks are sorted by multiplier vote.
 ### Raising <code>hardLimit</code><br /><br />
 #### The <code>new multiplier</code> is defined as the vote of the 1512th highest block.
-#### If the resultant <code>new multiplier</code> is greater than <code>current mulitpiler</code>, it is set to (<code>current mulitpiler</code> + 1).
-#### If the resultant <code>raise value</code> is greater than <code>current hardLimit</code>, the <code>raise value</code> becomes the <code>new hardLimit</code> and the recalculation is complete.<br /><br />
+#### If the resultant <code>new multiplier</code> is greater than <code>current multiplier</code>, it is set to (<code>current multiplier</code> + 1).
+#### The <code>new hardLimit</code> is the value of (<code>new multiplier</code> * 4000000).<br /><br />
 ### Lowering <code>hardLimit</code><br /><br />
 #### The <code>lower value</code> is defined as the vote of the 1512th lowest block, converted to bytes.
 #### If the resultant <code>lower value</code> is less than (<code>current hardLimit</code> / 1.05) rounded down, it is set to that value.
