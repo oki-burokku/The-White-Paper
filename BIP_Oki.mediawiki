@@ -44,6 +44,7 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ### Lowering <code>hardLimit</code><br /><br />
 #### The <code>new multiplier</code> is defined as the vote of the 1512th lowest block.
 #### If the resultant <code>new mutiplier</code> is less than <code>current multiplier</code>, it is set to that (<code>current multiplier</code> - 1).
+#### If the <code>new mutiplier</code> is less than 1, then the <code>new mutiplier</code> is set to 1.
 #### The <code>new hardLimit</code> is the value of (<code>new multiplier</code> * 4000000).<br /><br />
 ### Otherwise, <code>new hardLimit</code> remains the same as <code>current hardLimit</code>.
 
@@ -55,7 +56,7 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ==Recommendations==
 
 ===Publication of <code>hardLimit</code>===
-# For the benefit of all observers, it is recommended that <code>hardLimit</code> be published.  Example: a complete coinbase string might read <br /><br /><code>/BIPBBB/X3/8M/</code><br /><br /> which indicates a vote for 12M maximum block weight, and an enforced <code>hardLimit</code> of a 8M block weight for the block containing the coinbase string.
+For the benefit of all observers, it is recommended that <code>hardLimit</code> be published.  Example: a complete coinbase string might read <br /><br /><code>/BIPBBB/X3/8M/</code><br /><br /> which indicates a vote for 12M maximum block weight, and an enforced <code>hardLimit</code> of a 8M block weight for the block containing the coinbase string.
 
 ==Deployment==
 
