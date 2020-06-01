@@ -1,29 +1,25 @@
 <pre>
-  BIP: 100
+  BIP: Oki
   Layer: Consensus (hard fork)
-  Title: Dynamic maximum block size by miner vote
-  Author: Jeff Garzik <jgarzik@gmail.com>
-          Tom Harding <tomh@thinlink.com>
-          Dagur Valberg Johannsson <dagurval@pvv.ntnu.no>
+  Title: Dynamic maximum block weight by miner vote
+  Author: Oki Burokku 
   Comments-Summary: No comments yet.
-  Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-0100
-  Status: Rejected
+  Comments-URI: https://github.com/oki-burokku/The-White-Paper
+  Status: Requires Oki Consensus
   Type: Standards Track
-  Created: 2015-06-11
+  Created: 2020-06-01
   License: BSD-2-Clause
 </pre>
 
 ==Abstract==
 
-Replace the static 1M block size hard limit with a hard limit set by coinbase vote, conducted on the same schedule as difficulty retargeting.
+Replace the static 4M block weight hard limit with a hard limit set by coinbase vote, conducted on the same schedule as difficulty retargeting.
 
 ==Motivation==
 
-Miners directly feel the effects, both positive and negative, of any maximum block size change imposed by their peers.  Larger blocks allow more growth in the on-chain ecosystem, while smaller blocks reduce resource requirements network-wide.  Miners also act as an efficient proxy for the rest of the ecosystem, since they are paid in the tokens collected for the blocks they create.
+Miners directly feel the effects, both positive and negative, of any maximum block weight change imposed by their peers.  Larger blocks allow more growth in the on-chain ecosystem, while smaller blocks reduce resource requirements network-wide.  Miners also act as an efficient proxy for the rest of the ecosystem, since they are paid in the tokens collected for the blocks they create.
 
-A simple deterministic system is specified, whereby a 75% mining supermajority may activate a change to the maximum block size each 2016 blocks.  Each change is limited to a 5% increase from the previous block size hard limit, or a decrease of similar magnitude.  Among adopting nodes, there will be no disagreement on the evolution of the maximum block size.
-
-The system is compatible with emergent consensus, but whereas under that system a miner may choose to accept any size block, a miner following BIP100 observes the 75% supermajority rule, and the 5% change limit rule.  Excessive-block values signaled by emergent consensus blocks are considered in the calculation of the BIP100 block size hard limit, and the BIP100 calculated maximum block size is signaled as an excessive-block value for the benefit of all observers.
+A simple deterministic system is specified, whereby a 75% mining supermajority may activate a change to the maximum block weight each 2016 blocks.  Each change is limited to a 4M increase from the previous block weight hard limit, or a decrease of similar magnitude.  Among adopting nodes, there will be no disagreement on the evolution of the maximum block weight.
 
 ==Specification==
 
@@ -68,9 +64,8 @@ This BIP is presumed deployed and activated as of block height 449568 by impleme
 The first block larger than 1M will create a network partition, as nodes with a fixed 1M hard limit reject that block.
 
 ==Implementations==
-https://github.com/bitcoinxt/bitcoinxt/pull/188</br>
-https://github.com/bitcoinxt/bitcoin/pull/1</br>
-https://github.com/BitcoinUnlimited/BitcoinUnlimited/pull/398</br>
+https://github.com/oki-burokku/bitcoin/pull/bbb</br>
 
 ==Copyright==
+This document was based on the BIP100 proposal by Jeff Garzik, Tom Harding & Dagur Valberg Johannsson.
 This document is licensed under the BSD 2-clause license.
