@@ -65,11 +65,10 @@ This BIP is presumed deployed and activated as of a past block height by impleme
 The first block larger than IP1 will create a network partition, as nodes with a fixed IP1 hard limit reject that block.
 
 ==Implementations==
-https://github.com/bitcoinxt/bitcoinxt/pull/188</br>
-https://github.com/bitcoinxt/bitcoin/pull/1</br>
-https://github.com/BitcoinUnlimited/BitcoinUnlimited/pull/398</br>
+https://github.com/oki-burokku/The-White-Paper/blob/master/BIP_Oki.mediawiki</br>
 
 ==Copyright==
 This document is based on the original BIP100 proposal by J. Garzik, T. Harding & D. Johannsson.
+
 This document is licensed under the BSD 2-clause license.
 
