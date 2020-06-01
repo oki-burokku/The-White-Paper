@@ -50,6 +50,7 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ===Signature Hashing Operations Limits===
 # The per-block signature hashing operations limit is scaled to (<code>hardLimit</code> / 50).
 # A maximum serialized transaction size of 1000000 bytes is imposed.
+# The segregated witness data ratio of 3:1 shall be maintained.
 
 ==Recommendations==
 
@@ -68,7 +69,6 @@ The first block larger than 4M will create a network partition, as nodes with a 
 https://github.com/oki-burokku/The-White-Paper/blob/master/BIP_Oki.mediawiki</br>
 
 ==Copyright==
-This document is based on the original BIP100 proposal by J. Garzik, T. Harding & D. Johannsson.
-
-This document is licensed under the BSD 2-clause license.
+#This document is based on the original BIP100 proposal by J. Garzik, T. Harding & D. Johannsson.
+#This document is licensed under the BSD 2-clause license.
 
