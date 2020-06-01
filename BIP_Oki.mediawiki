@@ -54,11 +54,11 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ==Recommendations==
 
 ===Publication of <code>hardLimit</code>===
-# For the benefit of all observers, it is recommended that <code>hardLimit</code> be published.  Example: a complete coinbase string might read <br /><br /><code>/BIPBBB/X2/4M/</code><br /><br /> which indicates a vote for 8M maximum block weight, and an enforced <code>hardLimit</code> of 4M for the block containing the coinbase string.
+# For the benefit of all observers, it is recommended that <code>hardLimit</code> be published.  Example: a complete coinbase string might read <br /><br /><code>/BIPBBB/X3/8M/</code><br /><br /> which indicates a vote for 12M maximum block weight, and an enforced <code>hardLimit</code> of a 8M block weight for the block containing the coinbase string.
 
 ==Deployment==
 
-This BIP is presumed deployed and activated as of a past block height by implementing nodes on the bitcoin mainnet.  The activation height is implementation parameter 2 (IP2).  It has no effect until a raise value different from IP1 is observed, which requires at least 1512 of 2016 blocks to vote differently from IP1.
+This BIP is presumed deployed and activated as of a past block height by implementing nodes on the bitcoin mainnet.  The activation height is dependant on miner consensus.  It has no effect until at least 1512 of 2016 blocks to vote to increase the block weight multiplier.
 
 ==Backward compatibility==
 
