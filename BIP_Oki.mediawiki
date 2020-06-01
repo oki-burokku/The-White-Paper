@@ -29,7 +29,7 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 # The minimum <code>hardLimit</code> shall be 4M.
 # Changing <code>hardLimit</code> is accomplished by encoding a multiplier of 4M, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
 ## Vote encoding
-### A vote is represented as a multipler of 4M using the BIPBBB pattern<br /><br /><code>/BIPBBB/M[0-9]+/</code><br /><br />Example 1: <code>/BIPBBB/M2/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />Example 2: <code>/BIPBBB/M11/</code> is a vote for a 44000000-byte <code>hardLimit</code>.<br /><br />
+### A vote is represented as a multipler of 4M using the BIPBBB pattern<br /><br /><code>/BIPBBB/X[0-9]+/</code><br /><br />Example 1: <code>/BIPBBB/X2/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />Example 2: <code>/BIPBBB/X11/</code> is a vote for a 44000000-byte <code>hardLimit</code>.<br /><br />
 ### If the block height is encoded at the start of the coinbase scriptSig, as per BIP34, it is ignored.
 ### Only the first BIPBBB pattern match is processed in "Maximum block weight recalculation" below.
 ### A multiplier value is represented by consecutive base-ten digits.
@@ -54,7 +54,7 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ==Recommendations==
 
 ===Publication of <code>hardLimit</code>===
-# For the benefit of all observers, it is recommended that <code>hardLimit</code> be published.  Example: a complete coinbase string might read <br /><br /><code>/BIPBBB/B8/EB2.123456/</code><br /><br /> which indicates a vote for 8M maximum block size, and an enforced <code>hardLimit</code> of 2.123456 megabytes for the block containing the coinbase string.
+# For the benefit of all observers, it is recommended that <code>hardLimit</code> be published.  Example: a complete coinbase string might read <br /><br /><code>/BIPBBB/X2/4M/</code><br /><br /> which indicates a vote for 8M maximum block weight, and an enforced <code>hardLimit</code> of 4M for the block containing the coinbase string.
 
 ==Deployment==
 
