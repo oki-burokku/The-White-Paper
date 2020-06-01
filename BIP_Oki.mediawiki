@@ -27,11 +27,11 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 # Initial value of <code>hardLimit</code> is 4M.
 # The <code>hardLimit</code> shall only be increased or decreased by 4M.
 # The minimum <code>hardLimit</code> shall be 4M.
-# Changing <code>hardLimit</code> is accomplished by encoding a proposed multiplier value, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
+# Changing <code>hardLimit</code> is accomplished by encoding a proposed multiplier of 4M, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
 ## Vote encoding
-### A vote is represented as a multipler value using the BIPBBB pattern<br /><br /><code>/BIPBBB/M[0-9]+/</code><br /><br />Example: <code>/BIPBBB/M5/</code> is a vote for a 20000000-byte <code>hardLimit</code>.<br /><br />
+### A vote is represented as a multipler of 4M using the BIPBBB pattern<br /><br /><code>/BIPBBB/M[0-9]+/</code><br /><br />Example 1: <code>/BIPBBB/M5/</code> is a vote for a 20000000-byte <code>hardLimit</code>.<br /><br />Example 2: <code>/BIPBBB/M2/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />
 ### If the block height is encoded at the start of the coinbase scriptSig, as per BIP34, it is ignored.
-### Only the first BIPBBB pattern match is processed in "Maximum block size recalculation" below.
+### Only the first BIPBBB pattern match is processed in "Maximum block weight recalculation" below.
 ### A megabyte value is represented by consecutive base-ten digits.
 ### If no BIPBBB pattern is matched, the first matching emergent consensus pattern <code>/EB[0-9]+/</code>, if any, is accepted as the megabyte vote.<br /><br />
 ## Maximum block size recalculation
