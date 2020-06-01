@@ -35,7 +35,7 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ### A multiplier value is represented by consecutive base-ten digits.
 ## Maximum block weight recalculation
 ### A <code>new hardLimit</code> is calculated after each difficulty adjustment period of 2016 blocks, and applies to the next 2016 blocks.
-### Absent/zero-valued votes are counted as votes for the <code>current hardLimit</code>, which is defined as the <code>hardLimit</code> of the last block in the previous interval.
+### Absent/zero-valued votes are counted as votes for the <code>current hardLimit</code>, which is defined as the <code>hardLimit</code> of the previous interval.
 ### The votes of the previous 2016 blocks are sorted by multiplier vote.
 ### Raising <code>hardLimit</code><br /><br />
 #### The <code>new multiplier</code> is defined as the vote of the 1512th highest block.
