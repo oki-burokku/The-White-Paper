@@ -27,20 +27,19 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 # Initial value of <code>hardLimit</code> is 4M.
 # The <code>hardLimit</code> shall only be increased or decreased by 4M.
 # The minimum <code>hardLimit</code> shall be 4M.
-# Changing <code>hardLimit</code> is accomplished by encoding a proposed multiplier of 4M, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
+# Changing <code>hardLimit</code> is accomplished by encoding a multiplier of 4M, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
 ## Vote encoding
-### A vote is represented as a multipler of 4M using the BIPBBB pattern<br /><br /><code>/BIPBBB/M[0-9]+/</code><br /><br />Example 1: <code>/BIPBBB/M5/</code> is a vote for a 20000000-byte <code>hardLimit</code>.<br /><br />Example 2: <code>/BIPBBB/M2/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />
+### A vote is represented as a multipler of 4M using the BIPBBB pattern<br /><br /><code>/BIPBBB/M[0-9]+/</code><br /><br />Example 1: <code>/BIPBBB/M2/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />Example 2: <code>/BIPBBB/M11/</code> is a vote for a 44000000-byte <code>hardLimit</code>.<br /><br />
 ### If the block height is encoded at the start of the coinbase scriptSig, as per BIP34, it is ignored.
 ### Only the first BIPBBB pattern match is processed in "Maximum block weight recalculation" below.
-### A megabyte value is represented by consecutive base-ten digits.
-### If no BIPBBB pattern is matched, the first matching emergent consensus pattern <code>/EB[0-9]+/</code>, if any, is accepted as the megabyte vote.<br /><br />
-## Maximum block size recalculation
+### A multiplier value is represented by consecutive base-ten digits.
+## Maximum block weight recalculation
 ### A <code>new hardLimit</code> is calculated after each difficulty adjustment period of 2016 blocks, and applies to the next 2016 blocks.
 ### Absent/zero-valued votes are counted as votes for the <code>current hardLimit</code>, which is defined as the <code>hardLimit</code> of the last block in the previous interval.
-### The votes of the previous 2016 blocks are sorted by megabyte vote.
+### The votes of the previous 2016 blocks are sorted by multiplier vote.
 ### Raising <code>hardLimit</code><br /><br />
-#### The <code>raise value</code> is defined as the vote of the 1512th highest block, converted to bytes.
-#### If the resultant <code>raise value</code> is greater than (<code>current hardLimit</code> * 1.05) rounded down, it is set to that value.
+#### The <code>new multiplier</code> is defined as the vote of the 1512th highest block.
+#### If the resultant <code>new multiplier</code> is greater than <code>current mulitpiler</code>, it is set to (<code>current mulitpiler</code> + 1).
 #### If the resultant <code>raise value</code> is greater than <code>current hardLimit</code>, the <code>raise value</code> becomes the <code>new hardLimit</code> and the recalculation is complete.<br /><br />
 ### Lowering <code>hardLimit</code><br /><br />
 #### The <code>lower value</code> is defined as the vote of the 1512th lowest block, converted to bytes.
