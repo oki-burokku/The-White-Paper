@@ -24,10 +24,12 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ==Specification==
 
 ===Dynamic Maximum Block Weight===
-# Initial value of <code>hardLimit</code> is implementation parameter 1 (IP1).
-# Changing <code>hardLimit</code> is accomplished by encoding a proposed value, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
+# Initial value of <code>hardLimit</code> is 4M.
+# The <code>hardLimit</code> shall only be increased or decreased by 4M.
+# The minimum <code>hardLimit</code> shall be 4M.
+# Changing <code>hardLimit</code> is accomplished by encoding a proposed multiplier value, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
 ## Vote encoding
-### A vote is represented as a megabyte value using the BIPBBB pattern<br /><br /><code>/BIPBBB/B[0-9]+/</code><br /><br />Example: <code>/BIPBBB/B8/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />
+### A vote is represented as a multipler value using the BIPBBB pattern<br /><br /><code>/BIPBBB/M[0-9]+/</code><br /><br />Example: <code>/BIPBBB/M5/</code> is a vote for a 20000000-byte <code>hardLimit</code>.<br /><br />
 ### If the block height is encoded at the start of the coinbase scriptSig, as per BIP34, it is ignored.
 ### Only the first BIPBBB pattern match is processed in "Maximum block size recalculation" below.
 ### A megabyte value is represented by consecutive base-ten digits.
