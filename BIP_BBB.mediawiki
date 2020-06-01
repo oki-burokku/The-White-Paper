@@ -67,9 +67,8 @@ This BIP is presumed deployed and activated as of a past block height by impleme
 #The first block larger than 4M will create a network partition, as nodes with a fixed 4M hard limit reject that block.
 #The first block with a non segregated witness data area larger than 1M will create a network partition, as nodes with a fixed 1M hard limit reject that block.
 
-
 ==Implementations==
-https://github.com/oki-burokku/The-White-Paper/blob/master/BIP_Oki.mediawiki</br>
+https://github.com/oki-burokku/bitcoin/tree/bbb</br>
 
 ==Copyright==
 #This document is based on the original BIP100 proposal by J. Garzik, T. Harding & D. Johannsson.
