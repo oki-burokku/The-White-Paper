@@ -19,7 +19,9 @@ Replace the static base block weight hard limit with a hard limit set by coinbas
 
 Miners directly feel the effects, both positive and negative, of any maximum block weight change imposed by their peers.  Larger blocks allow more growth in the on-chain ecosystem, while smaller blocks reduce resource requirements network-wide.  Miners also act as an efficient proxy for the rest of the ecosystem, since they are paid in the tokens collected for the blocks they create.
 
-A simple deterministic system is specified, whereby a 75% mining supermajority may activate a change to the maximum block weight each 2016 blocks.  Each change is limited to a 4M increase from the previous block weight hard limit, or a decrease of similar magnitude.  Among adopting nodes, there will be no disagreement on the evolution of the maximum block weight.
+A simple deterministic system is specified, whereby a 75% mining supermajority may activate a change to the maximum block weight each 2016 blocks.  Each change is limited to a 4M increase from the previous block weight hard limit, or a decrease of similar magnitude.  Among adopting miners, there will be no disagreement on the evolution of the maximum block weight.
+
+Bitcoin is defined as the blockchain with the most PoW. Adopting nodes (and miners) should follow the blockchain with the most PoW, they should not police maximum block weight on blocks received from the network. To stop the nodes (and miners) being spammed with super massive blocks an upper limit on acceptable maximum block weight should be maintained. That upper limit shall be 3x the current maximum block weight. 
 
 ==Specification==
 
@@ -49,9 +51,12 @@ A simple deterministic system is specified, whereby a 75% mining supermajority m
 ### Otherwise, <code>new hardLimit</code> remains the same as <code>current hardLimit</code>.
 
 ===Signature Hashing Operations Limits===
-# The per-block signature hashing operations limit is scaled to (<code>hardLimit</code> / 50).
+# The per-block signature hashing operations limit is scaled to (<code>hardLimit</code> x 3 / 50).
 # A maximum serialized transaction size of 1000000 bytes is imposed.
+
+===Block Weight Validation===
 # The segregated witness data ratio of 3:1 shall be maintained.
+# The block weight of blocks received from the network may be up to (<code>hardLimit</code> x 3).
 
 ==Recommendations==
 
