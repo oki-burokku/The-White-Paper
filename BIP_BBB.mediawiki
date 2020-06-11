@@ -21,7 +21,7 @@ Miners directly feel the effects, both positive and negative, of any maximum blo
 
 A simple deterministic system is specified, whereby a 75% mining supermajority may activate a change to the maximum block weight each 2016 blocks.  Each change is limited to a 4M increase from the previous block weight hard limit, or a decrease of similar magnitude.  Among adopting miners, there will be no disagreement on the evolution of the maximum block weight.
 
-Bitcoin is defined as the blockchain with the most PoW. Adopting nodes (and miners) should follow the blockchain with the most PoW, they should not police maximum block weight on blocks received from the network. To stop the nodes (and miners) being spammed with super massive blocks an upper limit on acceptable maximum block weight should be maintained. That upper limit shall be 3x the current maximum block weight. 
+Adopting nodes (and miners) should follow the blockchain with the most PoW, they should not police maximum block weight on blocks received from the network. To stop the nodes (and miners) being spammed with super massive blocks an upper limit on acceptable maximum block weight on blocked received from the network should be maintained. That upper limit shall be 3x the current maximum block weight. 
 
 ==Specification==
 
