@@ -28,7 +28,8 @@ Adopting nodes (and miners) should follow the blockchain with the most PoW, they
 ===Dynamic Maximum Block Weight===
 # Initial value of <code>hardLimit</code> is 4M.
 # The <code>hardLimit</code> shall only be increased or decreased by 4M.
-# The minimum <code>hardLimit</code> shall be 4M.
+# The minimum <code>hardLimit</code> shall be >= 4M. Thus the minimum multiplier value shall be 1.
+# The maximum <code>hardLimit</code> shall be < (100000 x 4M). Thus the maximum multiplier value shall be 99999.
 # Changing <code>hardLimit</code> is accomplished by encoding a multiplier of 4M, a vote, within a block's coinbase scriptSig, and by processing the votes contained in the previous retargeting period.<br /><br />
 ## Vote encoding
 ### A vote is represented as a multipler of 4M using the BIPBBB pattern<br /><br /><code>/BIPBBB/X[0-9]+/</code><br /><br />Example 1: <code>/BIPBBB/X2/</code> is a vote for a 8000000-byte <code>hardLimit</code>.<br /><br />Example 2: <code>/BIPBBB/X11/</code> is a vote for a 44000000-byte <code>hardLimit</code>.<br /><br />
