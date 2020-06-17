@@ -74,9 +74,11 @@ This BIP is presumed deployed and activated as of a past block height by impleme
 #The first block larger than 4M will create a network partition, as nodes with a fixed 4M hard limit reject that block; or
 #The first block with a non segregated witness data area larger than 1M will create a network partition, as nodes with a fixed 1M hard limit reject that block.
 
-==Command Line Options==
+==Startup & Command Line Options==
 
-The option <code>-blockmaxweightmultiplier=n</code> may be used to set the block weight multipler at startup. The n value shall be >0 and <100000.
+The option <code>-blockweightmultiplier=n</code> may be used to set the block weight multipler at startup. The n value shall be >0 and <100000.
+
+If <code>-blockweightmultiplier=n</code> is not set then the most recent difficulty retargeting interval shall be scanned to determine the block weight multiplier.
 
 ==Implementations==
 https://github.com/oki-burokku/bitcoin/tree/bbb</br>
