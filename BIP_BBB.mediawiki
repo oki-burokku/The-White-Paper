@@ -82,6 +82,9 @@ If <code>-blockweightmultiplier=n</code> is not set then the most recent difficu
 
 ==Implementations==
 https://github.com/oki-burokku/bitcoin/tree/bbb</br>
+https://github.com/oki-burokku/bitcoin/tree/0.20</br>
+https://github.com/oki-burokku/bitcoin/tree/0.19</br>
+https://github.com/oki-burokku/bitcoin/</br>
 
 ==Copyright==
 #This document is based on the original BIP100 proposal by J. Garzik, T. Harding & D. Johannsson.
